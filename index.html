@@ -11,11 +11,13 @@
         console.log("start");
         const d = new Date();
 
-        const arrowSec = document.querySelector(".face__arrow_type_thin");
-        const arrowMin = document.querySelector(".face__arrow_type_thick");
+        const arrowSec = document.querySelector(".face__arrow_time_sec");
+        const arrowMin = document.querySelector(".face__arrow_time_min");
+        const arrowHour = document.querySelector(".face__arrow_time_hour");
 
         arrowSec.style.setProperty("--deg-sec", `${d.getSeconds() * 6}deg`);
         arrowMin.style.setProperty("--deg-min", `${d.getMinutes() * 6}deg`);
+        arrowHour.style.setProperty("--deg-hour", `${d.getHours() * 20}deg`);
       };
     </script>
   </head>
@@ -23,8 +25,9 @@
     <div class="wrap">
       <div class="face">
         <div class="face__center"></div>
-        <div class="face__arrow face__arrow_type_thin"></div>
-        <div class="face__arrow face__arrow_type_thick"></div>
+        <div class="face__arrow face__arrow_time_sec"></div>
+        <div class="face__arrow face__arrow_time_min"></div>
+        <div class="face__arrow face__arrow_time_hour"></div>
       </div>
     </div>
   </body>

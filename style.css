@@ -1,7 +1,9 @@
 :root {
     --deg-sec: 0deg;
-    /* the default */
     --deg-min: 0deg;
+    --deg-hour: 0deg;
+
+
     --color-back: #1D1E22;
     --color-green: green;
 }
@@ -59,17 +61,19 @@ body {
     border-radius: 0 0 3px 3px;
 }
 
-.face__arrow_type_thin {
+
+
+.face__arrow_time_sec {
     height: 55%;
     margin-top: 5%;
-    background-color: green;
+    background-color: var(--color-green);
     transform-origin: center calc((1 - 10 / 55) * 100%);
     animation: seconds 10s linear infinite;
     z-index: 20;
 }
 
-.face__arrow_type_thick {
-    width: 5px;
+.face__arrow_time_min {
+    width: 6px;
     height: 50%;
     margin-top: 6%;
     background-color: white;
@@ -77,18 +81,14 @@ body {
     animation: minutes 15s linear infinite;
 }
 
-.face__arrow_type_thick::after {
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 0;
-    top: -4px;
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;
-    border-bottom: 6px solid white;
+.face__arrow_time_hour {
+    width: 6px;
+    height: 42%;
+    margin-top: 18%;
+    background-color: white;
+    transform-origin: center calc((1 - 6 / 42) * 100%);
+    animation: hours 22s linear infinite;
 }
-
-.arrow_type_hour {}
 
 /* ANIMATION */
 @keyframes seconds {
@@ -110,3 +110,25 @@ body {
         transform: rotate(calc(var(--deg-min) + 360deg));
     }
 }
+
+@keyframes hours {
+    0% {
+        transform: rotate(var(--deg-hour));
+    }
+
+    100% {
+        transform: rotate(calc(var(--deg-hour) + 360deg));
+    }
+}
+
+
+/* .face__arrow_type_thick::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    top: -5.7px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 6px solid white;
+} */
