@@ -84,7 +84,7 @@ body {
 .face__arrow_time_hour {
     width: 6px;
     height: 42%;
-    margin-top: 18%;
+    margin-top: 14%;
     background-color: white;
     transform-origin: center calc((1 - 6 / 42) * 100%);
     animation: hours 22s linear infinite;
