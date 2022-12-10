@@ -3,6 +3,7 @@
     /* the default */
     --deg-min: 0deg;
     --color-back: #1D1E22;
+    --color-green: green;
 }
 
 html,
@@ -16,10 +17,10 @@ body {
 }
 
 .wrap {
-    poisition: relative;
+    position: relative;
     display: flex;
     flex-direction: column;
-    heigth: 100%;
+    height: 100%;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -28,10 +29,25 @@ body {
 
 .face {
     position: relative;
+    display: flex;
     width: 200px;
     height: 200px;
     border-radius: 50%;
     border: 2px solid white;
+    
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.face__center {
+    position: relative;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+
+    background-color: var(--color-green);
+    margin: auto;
+    z-index: 5;
 }
 
 .face__arrow {

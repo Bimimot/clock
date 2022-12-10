@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>CLOCK</title>
 
     <script defer>
       window.onload = function () {
+        console.log("start");
         const d = new Date();
 
         const arrowSec = document.querySelector(".face__arrow_type_sec");
@@ -17,13 +18,13 @@
         arrowMin.style.setProperty("--deg-min", `${d.getMinutes() * 6}deg`);
       };
     </script>
-
   </head>
   <body>
     <div class="wrap">
       <div class="face">
-        <div class="face__arrow face__arrow_type_sec"></div>
-        <div class="face__arrow face__arrow_type_min"></div>
+        <div class="face__center"></div>
+        <div class="face__arrow face__arrow_type_thin"></div>
+        <div class="face__arrow face__arrow_type_thick"></div>
       </div>
     </div>
   </body>
