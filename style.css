@@ -34,7 +34,7 @@ body {
     height: 200px;
     border-radius: 50%;
     border: 2px solid white;
-    
+
     justify-content: center;
     box-sizing: border-box;
 }
@@ -53,29 +53,31 @@ body {
 .face__arrow {
     position: absolute;
     width: 1px;
-    height: 48%;
-    margin: 2% 0 0 50%;
+    height: 50%;
+    margin-top: 2%;
     color: white;
     border-radius: 0 0 3px 3px;
-
-    transform-origin: bottom center;
 }
 
-.face__arrow_type_sec {
+.face__arrow_type_thin {
+    height: 55%;
+    margin-top: 5%;
     background-color: green;
-    animation: seconds 4s linear infinite;
+    transform-origin: center calc((1 - 10 / 55) * 100%);
+    animation: seconds 10s linear infinite;
+    z-index: 20;
 }
 
-.face__arrow_type_min {
+.face__arrow_type_thick {
     width: 5px;
-    height: 40%;
-    margin: calc(10%) 0 0 calc(50% - 2px);
+    height: 50%;
+    margin-top: 6%;
     background-color: white;
+    transform-origin: center calc((1 - 6 / 50) * 100%);
     animation: minutes 15s linear infinite;
-    z-index: 2;
 }
 
-.face__arrow_type_min::after {
+.face__arrow_type_thick::after {
     position: absolute;
     content: "";
     width: 0;
@@ -86,9 +88,7 @@ body {
     border-bottom: 6px solid white;
 }
 
-.arrow_type_hour {
-    
-}
+.arrow_type_hour {}
 
 /* ANIMATION */
 @keyframes seconds {
