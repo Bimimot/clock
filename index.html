@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CLOCK</title>
+
+    <script defer>
+      window.onload = function () {
+        const d = new Date();
+
+        const arrowSec = document.querySelector(".face__arrow_type_sec");
+        const arrowMin = document.querySelector(".face__arrow_type_min");
+
+        arrowSec.style.setProperty("--deg-sec", `${d.getSeconds() * 6}deg`);
+        arrowMin.style.setProperty("--deg-min", `${d.getMinutes() * 6}deg`);
+      };
+    </script>
+    
+  </head>
+  <body>
     <div class="wrap">
-    <div class="face"> 
-      <div class="face__arrow face__arrow_type_sec"></div>
-      <div class="face__arrow face__arrow_type_min"></div>
+      <div class="face">
+        <div class="face__arrow face__arrow_type_sec"></div>
+        <div class="face__arrow face__arrow_type_min"></div>
+      </div>
     </div>
-</div>
-</body>
+  </body>
 </html>
