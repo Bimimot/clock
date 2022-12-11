@@ -3,7 +3,7 @@
     --deg-min: 0deg;
     --deg-hour: 0deg;
 
-    --size-clock: 400px;
+    --size-clock: 200px;
 
 
     --color-back: #1D1E22;
@@ -56,17 +56,16 @@ body {
 }
 
 
-
+/* ---------- CLOCK-ARROWS --------------- */
 .face__arrow {
     position: absolute;
     width: 1px;
     height: 50%;
     margin-top: 2%;
     color: white;
-    border-radius: 0 0 3px 3px;
+    border-radius: 50% 50% 3px 3px;
 }
 
-/* ---------- CLOCK-ARROWS --------------- */
 .face__arrow_time_sec {
     height: 55%;
     margin-top: 4%;
@@ -79,16 +78,6 @@ body {
 .face__arorow_weight_thick {
     width: 3%;
     background-color: white;
-}
-
-.face__arorow_weight_thick::after {
-    position: absolute;
-    content: "";
-    transform: rotate(45deg);
-    background-color: white;
-    top: -2.5%;
-    left: 17%;
-    padding: 35%;
 }
 
 .face__arrow_time_min {
