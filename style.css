@@ -1,10 +1,6 @@
 :root {
-    --deg-sec: 0deg;
-    --deg-min: 0deg;
-    --deg-hour: 0deg;
-
+    --deg-start: 0deg;
     --size-clock: 320px;
-
     --color-back: #1D1E22;
     --color-white: white;
     --color-prime: green;
@@ -70,7 +66,7 @@ body {
     margin-top: 4%;
     background-color: var(--color-prime);
     transform-origin: center calc((1 - 9 / 55) * 100%);
-    animation: seconds 10s linear infinite;
+    animation: rotate 60s steps(60) infinite;
     z-index: 20;
 }
 
@@ -83,14 +79,14 @@ body {
     height: 50%;
     margin-top: 6%;
     transform-origin: center calc((1 - 6 / 50) * 100%);
-    animation: minutes 15s linear infinite;
+    animation: rotate 15s steps(60) infinite;
 }
 
 .face__arrow_time_hour {
     height: 44%;
     margin-top: 12%;
     transform-origin: center calc((1 - 6 / 44) * 100%);
-    animation: hours 22s linear infinite;
+    animation: rotate 22s linear infinite;
 }
 
 /* ---------- CLOCK-MARKS --------------- */
@@ -139,7 +135,6 @@ body {
         0 calc(var(--size-clock) * .46) 0 0 var(--color-white);
 }
 
-
 .face__mark-min {
     position: absolute;
     width: .5px;
@@ -168,33 +163,12 @@ body {
 }
 
 /* ---------- ANIMATION --------------- */
-@keyframes seconds {
+@keyframes rotate {
     0% {
-        transform: rotate(var(--deg-sec));
+        transform: rotate(var(--deg-start));
     }
-
     100% {
-        transform: rotate(calc(var(--deg-sec) + 360deg));
-    }
-}
-
-@keyframes minutes {
-    0% {
-        transform: rotate(var(--deg-min));
-    }
-
-    100% {
-        transform: rotate(calc(var(--deg-min) + 360deg));
-    }
-}
-
-@keyframes hours {
-    0% {
-        transform: rotate(var(--deg-hour));
-    }
-
-    100% {
-        transform: rotate(calc(var(--deg-hour) + 360deg));
+        transform: rotate(calc(var(--deg-start) + 360deg));
     }
 }
 
