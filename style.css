@@ -3,6 +3,8 @@
     --deg-min: 0deg;
     --deg-hour: 0deg;
 
+    --size-clock: 200px;
+
 
     --color-back: #1D1E22;
     --color-green: green;
@@ -16,6 +18,7 @@ body {
     height: 100%;
     width: 100%;
     margin: 0;
+    overflow: hidden;
 }
 
 .wrap {
@@ -32,8 +35,8 @@ body {
 .face {
     position: relative;
     display: flex;
-    width: 200px;
-    height: 200px;
+    width: var(--size-clock);
+    height: var(--size-clock);
     border-radius: 50%;
     border: 2px solid white;
 
@@ -90,7 +93,80 @@ body {
     animation: hours 22s linear infinite;
 }
 
-/* ANIMATION */
+/* ---------- CLOCK-MARKS --------------- */
+.face__marks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.face__marks-block {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+.face__marks-block:nth-child(2) {
+    transform: rotate(30deg);
+}
+
+.face__marks-block:nth-child(3) {
+    transform: rotate(60deg);
+}
+
+.face__marks-block:nth-child(4) {
+    transform: rotate(90deg);
+}
+
+.face__marks-block:nth-child(5) {
+    transform: rotate(120deg);
+}
+.face__marks-block:nth-child(6) {
+    transform: rotate(150deg);
+}
+
+.face__mark-hour {
+    position: absolute;
+    width: 3%;
+    height: 3%;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 0 calc(var(--size-clock) * -.45) 0 0 white,
+        0 calc(var(--size-clock) * .45) 0 0 white;
+}
+
+
+.face__mark-min {
+    width: .5px;
+    height: 94%;
+    background-color: transparent;
+    border: calc(var(--size-clock) * .03) solid white;
+    border-left: none;
+    border-right: none;
+    box-sizing: border-box;
+    border-radius: 0;
+}
+
+.face__mark-min:nth-child(1) {
+    transform: rotate(6deg);
+}
+
+.face__mark-min:nth-child(2) {
+    transform: rotate(12deg);
+}
+
+.face__mark-min:nth-child(3) {
+    transform: rotate(18deg);
+}
+
+.face__mark-min:nth-child(4) {
+    transform: rotate(24deg);
+}
+
+/* ---------- ANIMATION --------------- */
 @keyframes seconds {
     0% {
         transform: rotate(var(--deg-sec));
