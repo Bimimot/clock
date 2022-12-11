@@ -14,9 +14,14 @@
         const arrowMin = document.querySelector(".face__arrow_time_min");
         const arrowHour = document.querySelector(".face__arrow_time_hour");
 
-        arrowSec.style.setProperty("--deg-start", `${d.getSeconds() * 6}deg`);
-        arrowMin.style.setProperty("--deg-start", `${d.getMinutes() * 6}deg`);
-        arrowHour.style.setProperty("--deg-start", `${d.getHours() % 12 * 30}deg`);
+        const s = d.getSeconds();
+        const m = d.getMinutes();
+        const h = d.getHours();
+
+        arrowSec.style.setProperty("--deg-start", `${s * 6}deg`);
+        arrowMin.style.setProperty("animation-delay", `${61 - s}s`);
+        arrowMin.style.setProperty("--deg-start", `${m * 6}deg`);        
+        arrowHour.style.setProperty("--deg-start", `${h % 12 * 30}deg`);
       });
     </script>
   </head>
