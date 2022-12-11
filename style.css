@@ -3,7 +3,7 @@
     --deg-min: 0deg;
     --deg-hour: 0deg;
 
-    --size-clock: 200px;
+    --size-clock: 320px;
 
 
     --color-back: #1D1E22;
@@ -46,10 +46,9 @@ body {
 
 .face__center {
     position: relative;
-    width: 5px;
-    height: 5px;
+    width: 3%;
+    height: 3%;
     border-radius: 50%;
-
     background-color: var(--color-green);
     margin: auto;
     z-index: 5;
@@ -59,7 +58,7 @@ body {
 /* ---------- CLOCK-ARROWS --------------- */
 .face__arrow {
     position: absolute;
-    width: 1px;
+    width: .5%;
     height: 50%;
     margin-top: 2%;
     color: white;
@@ -136,8 +135,8 @@ body {
     height: 3%;
     background-color: transparent;
     border-radius: 50%;
-    box-shadow: 0 calc(var(--size-clock) * -.455) 0 0 white,
-        0 calc(var(--size-clock) * .455) 0 0 white;
+    box-shadow: 0 calc(var(--size-clock) * -.46) 0 0 white,
+        0 calc(var(--size-clock) * .46) 0 0 white;
 }
 
 
