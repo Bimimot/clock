@@ -19,9 +19,9 @@
         const h = d.getHours();
 
         arrowSec.style.setProperty("--deg-start", `${s * 6}deg`);
-        arrowMin.style.setProperty("animation-delay", `${61 - s}s`);
+        arrowMin.style.setProperty("animation-delay", `${60 - s}s`);
         arrowMin.style.setProperty("--deg-start", `${m * 6}deg`);        
-        arrowHour.style.setProperty("--deg-start", `${h % 12 * 30}deg`);
+        arrowHour.style.setProperty("--deg-start", `${h % 12 * 30 + (m + s / 60) * .5}deg`);
       });
     </script>
   </head>
