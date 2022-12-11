@@ -136,20 +136,20 @@ body {
     height: 3%;
     background-color: transparent;
     border-radius: 50%;
-    box-shadow: 0 calc(var(--size-clock) * -.45) 0 0 white,
-        0 calc(var(--size-clock) * .45) 0 0 white;
+    box-shadow: 0 calc(var(--size-clock) * -.455) 0 0 white,
+        0 calc(var(--size-clock) * .455) 0 0 white;
 }
 
 
 .face__mark-min {
+    position: absolute;
     width: .5px;
-    height: 94%;
+    opacity: .6;
+    height: 90%;
     background-color: transparent;
     border: calc(var(--size-clock) * .03) solid white;
     border-left: none;
     border-right: none;
-    box-sizing: border-box;
-    border-radius: 0;
 }
 
 .face__mark-min:nth-child(1) {
