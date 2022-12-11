@@ -55,6 +55,8 @@ body {
     z-index: 5;
 }
 
+
+
 .face__arrow {
     position: absolute;
     width: 1px;
@@ -64,8 +66,7 @@ body {
     border-radius: 0 0 3px 3px;
 }
 
-
-
+/* ---------- CLOCK-ARROWS --------------- */
 .face__arrow_time_sec {
     height: 55%;
     margin-top: 5%;
@@ -75,21 +76,33 @@ body {
     z-index: 20;
 }
 
-.face__arrow_time_min {
+.face__arorow_weight_thick {
     width: 6px;
+    background-color: white;
+}
+
+.face__arorow_weight_thick::after {
+    position: absolute;
+    content: "";
+    width: 4.3px;
+    height: 4.3px;
+    transform: rotate(45deg);
+    background-color: white;
+    top: -2px;
+    left: .8px;
+}
+
+.face__arrow_time_min {
     height: 50%;
     margin-top: 6%;
-    background-color: white;
     transform-origin: center calc((1 - 6 / 50) * 100%);
     animation: minutes 15s linear infinite;
 }
 
 .face__arrow_time_hour {
-    width: 6px;
-    height: 42%;
-    margin-top: 14%;
-    background-color: white;
-    transform-origin: center calc((1 - 6 / 42) * 100%);
+    height: 44%;
+    margin-top: 12%;
+    transform-origin: center calc((1 - 6 / 44) * 100%);
     animation: hours 22s linear infinite;
 }
 
@@ -124,6 +137,7 @@ body {
 .face__marks-block:nth-child(5) {
     transform: rotate(120deg);
 }
+
 .face__marks-block:nth-child(6) {
     transform: rotate(150deg);
 }
