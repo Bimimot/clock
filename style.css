@@ -3,7 +3,7 @@
     --deg-min: 0deg;
     --deg-hour: 0deg;
 
-    --size-clock: 200px;
+    --size-clock: 400px;
 
 
     --color-back: #1D1E22;
@@ -77,19 +77,18 @@ body {
 }
 
 .face__arorow_weight_thick {
-    width: 6px;
+    width: 3%;
     background-color: white;
 }
 
 .face__arorow_weight_thick::after {
     position: absolute;
     content: "";
-    width: 4.3px;
-    height: 4.3px;
     transform: rotate(45deg);
     background-color: white;
-    top: -2px;
-    left: .8px;
+    top: -2.5%;
+    left: 17%;
+    padding: 35%;
 }
 
 .face__arrow_time_min {
