@@ -1,3 +1,5 @@
+@import url(/font.css);
+
 :root {
     --deg-start: 0deg;
     --size-clock: 320px;
@@ -15,6 +17,7 @@ body {
     width: 100%;
     margin: 0;
     overflow: hidden;
+    font-family: Inder, Arial, Helvetica, sans-serif;
 }
 
 .wrap {
@@ -104,6 +107,8 @@ body {
     position: absolute;
     justify-content: center;
     align-items: center;
+    color: white;
+    font-size: calc(var(--size-clock) * .1);
 }
 
 .face__marks-block:nth-child(2) {
@@ -161,6 +166,33 @@ body {
 
 .face__mark-min:nth-child(4) {
     transform: rotate(24deg);
+}
+
+/* ---------- DIGITS --------------- */
+.face__marks-block:nth-child(1)::before {
+    position: absolute;
+    content: "12";
+    top: 6%;
+}
+
+.face__marks-block:nth-child(1)::after {
+    position: absolute;
+    content: "6";
+    top: 83%;
+}
+
+.face__marks-block:nth-child(4)::before {
+    position: absolute;
+    transform: rotate(-90deg);
+    content: "3";
+    top: 6%;
+}
+
+.face__marks-block:nth-child(4)::after {
+    position: absolute;
+    transform: rotate(-90deg);
+    content: "9";
+    top: 83%;
 }
 
 /* ---------- ANIMATION --------------- */
