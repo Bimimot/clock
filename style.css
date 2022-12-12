@@ -47,9 +47,8 @@ body {
     border-radius: 50%;
     background-color: var(--color-prime);
     margin: auto;
-    z-index: 5;
+    z-index: 50;
 }
-
 
 /* ---------- CLOCK-ARROWS --------------- */
 .face__arrow {
@@ -58,7 +57,6 @@ body {
     height: 50%;
     margin-top: 2%;
     color: var(--color-white);
-    border-radius: 50% 50% 3px 3px;
 }
 
 .face__arrow_time_sec {
@@ -74,6 +72,7 @@ body {
     width: 3%;
     background-color: var(--color-white);
     box-shadow: 0 0 .5px .5px var(--color-back);
+    border-radius: 50% 50% 3px 3px;
 }
 
 .face__arrow_time_min {
