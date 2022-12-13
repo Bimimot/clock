@@ -67,6 +67,7 @@ body {
     margin-top: 4%;
     background-color: var(--color-prime);
     transform-origin: center calc((1 - 9 / 55) * 100%);
+    transform: rotate(var(--deg-start));
     animation: rotate 60s steps(60) infinite;
     z-index: 20;
 }
@@ -107,8 +108,6 @@ body {
     position: absolute;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: calc(var(--size-clock) * .1);
 }
 
 .face__marks-block:nth-child(2) {
@@ -169,30 +168,28 @@ body {
 }
 
 /* ---------- DIGITS --------------- */
-.face__marks-block:nth-child(1)::before {
+.face__digit {
     position: absolute;
-    content: "12";
+    color: white;
+    font-size: calc(var(--size-clock) * .1);
+}
+
+.face__digit:nth-child(1) {
     top: 6%;
 }
 
-.face__marks-block:nth-child(1)::after {
-    position: absolute;
-    content: "6";
+.face__digit:nth-child(2) {
+    top: 44%;
+    left: 87%;
+}
+
+.face__digit:nth-child(3) {
     top: 83%;
 }
 
-.face__marks-block:nth-child(4)::before {
-    position: absolute;
-    transform: rotate(-90deg);
-    content: "3";
-    top: 6%;
-}
-
-.face__marks-block:nth-child(4)::after {
-    position: absolute;
-    transform: rotate(-90deg);
-    content: "9";
-    top: 83%;
+.face__digit:nth-child(4) {
+    top: 44%;
+    right: 87%;
 }
 
 /* ---------- ANIMATION --------------- */
