@@ -20,8 +20,11 @@
 
         arrowSec.style.setProperty("--deg-start", `${s * 6}deg`);
         arrowMin.style.setProperty("animation-delay", `${60 - s}s`);
-        arrowMin.style.setProperty("--deg-start", `${m * 6}deg`);        
-        arrowHour.style.setProperty("--deg-start", `${h % 12 * 30 + (m + s / 60) * .5}deg`);
+        arrowMin.style.setProperty("--deg-start", `${m * 6}deg`);
+        arrowHour.style.setProperty(
+          "--deg-start",
+          `${(h % 12) * 30 + (m + s / 60) * 0.5}deg`
+        );
       });
     </script>
   </head>
@@ -31,11 +34,17 @@
         <span class="face__digit">12</span>
         <span class="face__digit">3</span>
         <span class="face__digit">6</span>
-        <span class="face__digit">9</span>        
+        <span class="face__digit">9</span>
         <div class="face__center"></div>
-        <div class="face__arrow face__arrow_time_sec"></div>
-        <div class="face__arrow face__arrow_time_min face__arorow_weight_thick"></div>
-        <div class="face__arrow face__arrow_time_hour face__arorow_weight_thick"></div>
+        <div class="face__arrow-step">
+          <div class="face__arrow face__arrow_time_sec"></div>
+        </div>
+        <div
+          class="face__arrow face__arrow_time_min face__arorow_weight_thick"
+        ></div>
+        <div
+          class="face__arrow face__arrow_time_hour face__arorow_weight_thick"
+        ></div>
         <div class="face__marks">
           <div class="face__marks-block">
             <span class="face__mark face__mark-min"></span>
@@ -78,7 +87,7 @@
             <span class="face__mark face__mark-min"></span>
             <span class="face__mark face__mark-min"></span>
             <span class="face__mark face__mark-hour"></span>
-          </div>                    
+          </div>
         </div>
       </div>
     </main>

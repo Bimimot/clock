@@ -38,7 +38,6 @@ body {
     height: var(--size-clock);
     border-radius: 50%;
     border: 2px solid var(--color-white);
-
     justify-content: center;
     box-sizing: border-box;
 }
@@ -62,6 +61,16 @@ body {
     color: var(--color-white);
 }
 
+.face__arrow-step {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    animation: step 1s steps(10, end) infinite;
+    z-index: 20;
+}
+
 .face__arrow_time_sec {
     height: 55%;
     margin-top: 4%;
@@ -69,7 +78,7 @@ body {
     transform-origin: center calc((1 - 9 / 55) * 100%);
     transform: rotate(var(--deg-start));
     animation: rotate 60s steps(60) infinite;
-    z-index: 20;
+
 }
 
 .face__arorow_weight_thick {
@@ -202,3 +211,14 @@ body {
     }
 }
 
+@keyframes step {
+    0% {
+        transform: rotate(0deg);
+    }
+    66% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(6deg);
+    }
+}
