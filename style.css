@@ -97,10 +97,10 @@ body {
 }
 
 .face__arrow_time_hour {
-    height: 44%;
-    margin-top: 12%;
-    transform-origin: center calc((1 - 6 / 44) * 100%);
-    animation: rotate calc(3600 * 12s) linear infinite;
+    height: 39%;
+    margin-top: 17%;
+    transform-origin: center calc((1 - 6 / 39) * 100%);
+    animation: rotate calc(3600 * 12s) steps(300) infinite;
 }
 
 /* ---------- CLOCK-MARKS --------------- */
