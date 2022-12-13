@@ -4,8 +4,8 @@
     --deg-start: 0deg;
     --size-clock: 320px;
     --color-back: #1D1E22;
-    --color-white: white;
-    --color-prime: green;
+    --color-prime: white;
+    --color-special: green;
 }
 
 html,
@@ -18,17 +18,8 @@ body {
     margin: 0;
     overflow: hidden;
     font-family: Inder, Arial, Helvetica, sans-serif;
-}
-
-.wrap {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
     align-items: center;
     justify-content: center;
-    border: 1px solid lightgrey;
 }
 
 .face {
@@ -37,9 +28,15 @@ body {
     width: var(--size-clock);
     height: var(--size-clock);
     border-radius: 50%;
-    border: 2px solid var(--color-white);
+    border: calc(var(--size-clock) * .00625) solid var(--color-prime);
     justify-content: center;
     box-sizing: border-box;
+}
+
+.face__canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .face__center {
@@ -47,7 +44,7 @@ body {
     width: 3%;
     height: 3%;
     border-radius: 50%;
-    background-color: var(--color-prime);
+    background-color: var(--color-special);
     margin: auto;
     z-index: 50;
 }
@@ -58,7 +55,7 @@ body {
     width: .5%;
     height: 50%;
     margin-top: 2%;
-    color: var(--color-white);
+    color: var(--color-prime);
 }
 
 .face__arrow-step {
@@ -74,16 +71,15 @@ body {
 .face__arrow_time_sec {
     height: 55%;
     margin-top: 4%;
-    background-color: var(--color-prime);
+    background-color: var(--color-special);
     transform-origin: center calc((1 - 9 / 55) * 100%);
     transform: rotate(var(--deg-start));
     animation: rotate 60s steps(60) infinite;
-
 }
 
 .face__arorow_weight_thick {
     width: 3%;
-    background-color: var(--color-white);
+    background-color: var(--color-prime);
     box-shadow: 0 0 .5px .5px var(--color-back);
     border-radius: 50% 50% 3px 3px;
 }
@@ -93,7 +89,7 @@ body {
     margin-top: 6%;
     transform-origin: center calc((1 - 6 / 50) * 100%);
     transform: rotate(var(--deg-start));
-    animation: rotate 3600s steps(60, start) infinite;    
+    animation: rotate 3600s steps(60, start) infinite;
 }
 
 .face__arrow_time_hour {
@@ -106,36 +102,30 @@ body {
 /* ---------- CLOCK-MARKS --------------- */
 .face__marks {
     position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.face__marks-block {
-    width: 100%;
-    height: 100%;
     display: flex;
-    position: absolute;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
 }
 
-.face__marks-block:nth-child(2) {
+.face__marks:nth-child(2) {
     transform: rotate(30deg);
 }
 
-.face__marks-block:nth-child(3) {
+.face__marks:nth-child(3) {
     transform: rotate(60deg);
 }
 
-.face__marks-block:nth-child(4) {
+.face__marks:nth-child(4) {
     transform: rotate(90deg);
 }
 
-.face__marks-block:nth-child(5) {
+.face__marks:nth-child(5) {
     transform: rotate(120deg);
 }
 
-.face__marks-block:nth-child(6) {
+.face__marks:nth-child(6) {
     transform: rotate(150deg);
 }
 
@@ -145,8 +135,8 @@ body {
     height: 3%;
     background-color: transparent;
     border-radius: 50%;
-    box-shadow: 0 calc(var(--size-clock) * -.46) 0 0 var(--color-white),
-        0 calc(var(--size-clock) * .46) 0 0 var(--color-white);
+    box-shadow: 0 calc(var(--size-clock) * -.46) 0 0 var(--color-prime),
+        0 calc(var(--size-clock) * .46) 0 0 var(--color-prime);
 }
 
 .face__mark-min {
@@ -155,12 +145,9 @@ body {
     opacity: .6;
     height: 90%;
     background-color: transparent;
-    border: calc(var(--size-clock) * .03) solid var(--color-white);
+    border: calc(var(--size-clock) * .03) solid var(--color-prime);
     border-left: none;
     border-right: none;
-}
-
-.face__mark-min:nth-child(1) {
     transform: rotate(6deg);
 }
 
@@ -179,26 +166,29 @@ body {
 /* ---------- DIGITS --------------- */
 .face__digit {
     position: absolute;
-    color: white;
+    display: flex;
+    color: var(--color-prime);
     font-size: calc(var(--size-clock) * .1);
-}
-
-.face__digit:nth-child(1) {
     top: 6%;
+    bottom: 6%;
+    left: 7%;
+    right: 7%;
+    justify-content: center;
 }
 
 .face__digit:nth-child(2) {
-    top: 44%;
-    left: 87%;
+    justify-content: start;
+    align-items: center;
 }
 
 .face__digit:nth-child(3) {
-    top: 83%;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .face__digit:nth-child(4) {
-    top: 44%;
-    right: 87%;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 /* ---------- ANIMATION --------------- */
@@ -206,18 +196,17 @@ body {
     0% {
         transform: rotate(var(--deg-start));
     }
+
     100% {
         transform: rotate(calc(var(--deg-start) + 360deg));
     }
 }
 
 @keyframes step {
-    0% {
-        transform: rotate(0deg);
-    }
     66% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(6deg);
     }
